@@ -1,0 +1,291 @@
+/* FlashCards */
+.container {
+  width: calc(100% - 200px);
+  padding: 0 0 0 15px;
+}
+
+.panel {
+  display: flex;
+  height: 100%;
+}
+
+.panel_main {
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 500px;
+  background-color: var(--foreground);
+  border-radius: 20px;
+  padding: 20px 7%;
+  position: relative;
+
+  .Arrow {
+    position: absolute;
+    height: 100%;
+    width: 7%;
+    max-width: 100px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 20px;
+    background-color: transparent;
+    color: var(--text);
+    z-index: 1;
+
+    &.left {
+      left: 0px;
+    }
+    &.right {
+      right: 0px;
+    }
+  }
+}
+
+.bannerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  font-size: 20px;
+  white-space: pre-wrap;
+  padding: 10px;
+  color: var(--text);
+
+  .centerText {
+    margin: auto;
+  }
+  .banner_notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    .addFlashCard {
+      font-size: 15px;
+      margin-top: 50px;
+      padding: 7px 50px;
+      border: 2px solid var(--bar);
+      color: var(--text);
+      width: fit-content;
+      margin: 20px auto;
+    }
+  }
+}
+
+.banner_options {
+  display: grid;
+  grid-template-columns: 70px 1fr 2fr;
+  margin: 15px 0;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  color: var(--buttontext);
+  svg {
+    stroke: var(--buttontext);
+  }
+
+  &.edit {
+    width: 140px;
+    height: 60px;
+  }
+
+  &.answer {
+    width: 250px;
+    height: 60px;
+    justify-self: end;
+  }
+}
+
+.side_container {
+  display: grid;
+  grid-template-rows: 1fr 60px;
+  margin-left: 10px;
+
+  .themebtn {
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    background-color: var(--uniquebtn);
+
+    &:hover {
+      background-color: var(--uniquebtnhover);
+    }
+
+    svg {
+      stroke: var(--uniquebtntext);
+    }
+  }
+}
+
+.datapanel_container {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+.datapanel_topbar {
+  display: flex;
+  width: 100%;
+  gap: 11px;
+
+  .datapanel_listview {
+    padding: 10px;
+    svg {
+      stroke: var(--buttontext);
+    }
+  }
+
+  .datapanel_addFlashCard {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--uniquebtn);
+    color: var(--uniquebtntext);
+
+    &:hover {
+      background-color: var(--uniquebtnhover);
+    }
+  }
+}
+
+.datapanel_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--button);
+  color: var(--buttontext);
+  width: 100%;
+  height: 90px;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  margin: 15px 0;
+
+  .datapanel_title {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .datapanel_desc {
+    display: flex;
+    justify-content: space-around;
+    font-size: 25px;
+    padding: 0 30px;
+
+    span:first-child,
+    span:last-child {
+      width: 80px;
+    }
+  }
+}
+
+.queue {
+  padding: 10px 0;
+
+  .queue_title {
+    color: var(--text);
+    font-size: 14px;
+  }
+
+  .queue_wrapper {
+    max-height: calc(100vh - 745px);
+    overflow-y: auto;
+
+    .queue_item {
+      background-color: var(--button);
+      color: var(--buttontext);
+      border-radius: 12px;
+      width: 100%;
+      max-height: 45px;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+
+      &:hover {
+        background-color: var(--buttonhover);
+      }
+
+      .queue_indx {
+        padding: 10px 26px 10px 23px;
+        border-right: 1px solid var(--bar);
+        min-width: 70px;
+      }
+
+      .queue_question {
+        padding: 0 26px;
+      }
+    }
+  }
+}
+
+.helper_container {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--uniquebtn);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    button {
+      color: var(--text);
+      padding: 5px 20px;
+      border: 2px solid var(--uniquebtn);
+      margin: 10px auto;
+      width: 200px;
+      max-width: 250px;
+    }
+
+    h2,
+    h3 {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 50px;
+    }
+
+    h3 {
+      font-size: 35px;
+    }
+
+    h4 {
+      font-size: 20px;
+      font-weight: 400;
+
+      span {
+        position: relative;
+        width: 100%;
+      }
+
+      span::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        border: 1px solid var(--uniquebtn);
+      }
+
+      p {
+        display: inline-flex;
+        background-color: var(--uniquebtn);
+        color: var(--uniquebtntext);
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+    }
+  }
+}

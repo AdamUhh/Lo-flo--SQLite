@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+:root {
+  --yellowBtnBG: #ffc240;
+  --greenBtnBG: #31af31;
+  --redBtnBG: red;
+}
+
+[data-theme="light"] {
+  --background: #fffffe;
+  --foreground: #e7e7e7;
+  --text: #001858;
+  --uniquebtn: #3da9fc;
+  --uniquebtntext: #fffffe;
+  --uniquebtnhover: #3197e6;
+  --button: #f1f1f1;
+  --buttontext: #001858;
+  --buttonhover: #cccccc;
+  --bar: #373737;
+  --bartext: #fffffe;
+  --barbtn: transparent;
+  --barbtntext: #001858;
+  --barbtnhover: #50ddf0b7;
+  --barshadow: 0px 3px 10px #000000;
+  --baropacity: #eeeeeecc;
+  
+}
+
+[data-theme="darkpurl"] {
+  --background: #242629;
+  --foreground: #3a3a3f;
+  --text: #fffffe;
+  --uniquebtn: #7f5af0;
+  --uniquebtntext: #fffffe;
+  --uniquebtnhover: #8c72da;
+  --button: #3a3a3f;
+  --buttontext: #fffffe;
+  --buttonhover: #16161a;
+  --bar: #7f5af0;
+  --bartext: #fffffe;
+  --barbtn: transparent;
+  --barbtntext: #ffffff;
+  --barbtnhover: #00000080;
+  --barshadow: 0px 3px 10px #000000;
+  --baropacity: #555550aa;
+}
+
+[data-theme="bubble"] {
+  --background: #f3d2c1;
+  --foreground: #fef6e4;
+  --text: #001858;
+  --uniquebtn: #8bd3dd;
+  --uniquebtntext: #001858;
+  --uniquebtnhover: #f582ae;
+  --button: #fef6e4;
+  --buttontext: #001858;
+  --buttonhover: #f582ae;
+  --bar: #8bd3dd;
+  --bartext: #001858;
+  --barbtn: transparent;
+  --barbtntext: #001858;
+  --barbtnhover: #50ddf0b7;
+  --barshadow: 0px 3px 10px #000000;
+  --baropacity: #f3d2c1cc;
+}
+
+[data-theme="pink"] {
+  --background: #fec7d7;
+  --foreground: #f9f8fc;
+  --text: #0e172c;
+  --uniquebtn: #fa9eb8;
+  --uniquebtntext: #001858;
+  --uniquebtnhover: #faa8bf;
+  --button: #f9f8fc;
+  --buttontext: #0e172c;
+  --buttonhover: #faa8bfaa;
+  --bar: #fa9eb8;
+  --bartext: #001858;
+  --barbtn: transparent;
+  --barbtntext: #001858;
+  --barbtnhover: #f180a0;
+  --barshadow: 0px 3px 10px #000000;
+  --baropacity: #896dbb80;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--uniquebtn);
+  border-radius: 20px;
+  border: 3px solid var(--foreground);
+}
+::-webkit-scrollbar-track {
+  background: var(--foreground);
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-weight: 500;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+.loading_spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 200;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 60px;
+  height: 60px;
+}
+.loading_path {
+  stroke: rgb(147, 191, 236);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+.btn_loading_spinner {
+  animation: rotate 2s linear infinite;
+  width: 20px;
+  height: 20px;
+}
+.btn_loading_path {
+  stroke: rgb(147, 191, 236);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  border: none;
+  background-color: var(--button);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: var(--buttonhover);
+  cursor: pointer;
+}
+.btn.red:hover {
+  background-color: var(--redBtnBG) !important;
+}
+.btn.red svg path {
+  transition: all 0.3s;
+}
+.btn.red:hover svg path {
+  stroke: white;
+}
+.btn.yellow:hover {
+  background-color: var(--yellowBtnBG) !important;
+}
+.btn.green:hover,
+.btn.green.selected {
+  color: white;
+  background-color: var(--greenBtnBG) !important;
+}
+
+/* Main */
+.main__container {
+  width: 100vw;
+  padding: 25px;
+  background-color: var(--background);
+}
+
+.main__wrapper {
+  display: flex;
+}
+
+/* tinybtn */
+.tinybtn {
+  border: none;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  transition: background-color 0.3s;
+}
+.tinybtn.red {
+  background-color: var(--redBtnBG);
+}
+.tinybtn.yellow {
+  background-color: var(--yellowBtnBG);
+}
+.tinybtn:hover {
+  filter: brightness(0.95);
+}

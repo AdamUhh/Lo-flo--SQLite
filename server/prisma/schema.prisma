@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+
+model Cards {
+  id       String     @id @default(uuid())
+  title    String
+  subjects Subjects[]
+}
+
+model Subjects {
+  id         String       @id @default(uuid())
+  title      String
+  cards      Cards        @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  cardId     String
+  flashCards FlashCards[]
+}
+
+model FlashCards {
+  id        String   @id @default(uuid())
+  question  String
+  solution  String
+  subjects  Subjects @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  subjectId String
+}
