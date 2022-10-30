@@ -4,6 +4,24 @@
   --yellowBtnBG: #ffc240;
   --greenBtnBG: #31af31;
   --redBtnBG: red;
+
+  /* Default */
+  --background: #fffffe;
+  --foreground: #e7e7e7;
+  --text: #001858;
+  --uniquebtn: #3da9fc;
+  --uniquebtntext: #fffffe;
+  --uniquebtnhover: #3197e6;
+  --button: #f1f1f1;
+  --buttontext: #001858;
+  --buttonhover: #cccccc;
+  --bar: #373737;
+  --bartext: #fffffe;
+  --barbtn: transparent;
+  --barbtntext: #001858;
+  --barbtnhover: #50ddf0b7;
+  --barshadow: 0px 3px 10px #000000;
+  --baropacity: #eeeeeecc;
 }
 
 [data-theme="light"] {
